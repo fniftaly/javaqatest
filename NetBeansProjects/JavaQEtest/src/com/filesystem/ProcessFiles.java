@@ -13,7 +13,7 @@ public class ProcessFiles {
     
     private String filename;
     
-    private String dir;
+    private String dir = "/Users/def/dir1";
     
     private Create_dir_file _dirfile;
     
