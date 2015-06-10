@@ -5,6 +5,7 @@
  */
 package com.filesystem;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -23,6 +24,6 @@ public interface Create_dir_file {
     
     public void copyfile(String sourceurl, String desturl);
     
-    public String[] searchfile(String dirurl, String fileurl);
+    public void searchfile(File dirurl);
     
 }
