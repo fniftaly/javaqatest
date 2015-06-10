@@ -27,6 +27,8 @@ public class CreateFileDir implements Create_dir_file {
     private User user, user2, user3;
 
     private ArrayList<User> userlist;
+    
+    private ArrayList<String> filelist = new ArrayList();
 
     public CreateFileDir() {
 
@@ -146,8 +148,45 @@ public class CreateFileDir implements Create_dir_file {
     }
 
     @Override
-    public String[] searchfile(String dirurl, String fileurl) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+    public void searchfile(File dirurl) {
+        
+       if (dirurl.isDirectory()) {
+	    search(dirurl);
+	} else {
+	    System.out.println(dirurl.getAbsoluteFile() + " is not a directory!");
+	}
+       
     }
+    
+    
+    private void search(File file) {
+ 
+	if (file.isDirectory()) {
+ 
+	    if (file.canRead()) {
+		for (File temp : file.listFiles()) {
+		    if (temp.isDirectory()) {
+			search(temp);
+		    } else {
+			if (filename.equals(temp.getName().toLowerCase())) {			
+			    filelist.add(temp.getAbsoluteFile().toString());
+		    }
+ 
+		}
+	    }
+ 
+	 } else {
+		System.out.println(file.getAbsoluteFile() + "You have no permission to access this file");
+	 }
+      }
+ 
+  }
+
+
+    public ArrayList<String> getFilelist() {
+        return filelist;
+    }
+    
+    
 
 }
