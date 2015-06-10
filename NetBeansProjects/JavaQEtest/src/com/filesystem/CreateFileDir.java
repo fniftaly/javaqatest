@@ -105,9 +105,9 @@ public class CreateFileDir implements Create_dir_file {
         }
         Iterator<User> iterator = userlist.iterator();
         while (iterator.hasNext()) {
-            User user = iterator.next();
-            System.out.println("ID: " + user.getUserid() + " FirstName: " + user.getFirstname()
-                    + " LastName: " + user.getLastname());
+            User userobj = iterator.next();
+            System.out.println("ID: " + userobj.getUserid() + " FirstName: " + userobj.getFirstname()
+                    + " LastName: " + userobj.getLastname());
         }
     }
 
