@@ -133,7 +133,7 @@ public class CreateFileDirIT {
         if(f.exists()){
          assertTrue(true);
         }else{
-          assertTrue(true);
+          assertTrue(false);
         }
     }
 //
