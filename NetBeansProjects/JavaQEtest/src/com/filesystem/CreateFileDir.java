@@ -32,20 +32,6 @@ public class CreateFileDir implements Create_dir_file {
 
     public CreateFileDir() {
 
-        user = new User("John", "Doe", "sales manager", 2345);
-
-        user2 = new User("Bill", "Hamilton", "CEO", 9876);
-
-        user3 = new User("Jina", "Tomson", "CTO", 7654);
-
-        userlist = new ArrayList();
-
-        userlist.add(user);
-
-        userlist.add(user2);
-
-        userlist.add(user3);
-
     }
 
     @Override
@@ -109,7 +95,7 @@ public class CreateFileDir implements Create_dir_file {
         while (iterator.hasNext()) {
             User userobj = iterator.next();
             System.out.println("ID: " + userobj.getUserid() + " FirstName: " + userobj.getFirstname()
-                    + " LastName: " + userobj.getLastname());
+                    + " LastName: " + userobj.getLastname()+ " Title: " + userobj.getTitle());
         }
     }
 
@@ -186,7 +172,17 @@ public class CreateFileDir implements Create_dir_file {
     public ArrayList<String> getFilelist() {
         return filelist;
     }
-    
-    
 
+    public ArrayList<User> getUserlist() {
+        return userlist;
+    }
+
+    public void setUserlist(ArrayList<User> userlist) {
+        this.userlist = userlist;
+    }
+
+    public void setFilelist(ArrayList<String> filelist) {
+        this.filelist = filelist;
+    }
+    
 }
