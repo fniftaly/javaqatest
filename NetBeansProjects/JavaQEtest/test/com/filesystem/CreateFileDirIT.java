@@ -113,7 +113,11 @@ public class CreateFileDirIT {
         
         CreateFileDir instance = new CreateFileDir();
         
-        instance.display(_dir);
+        if(instance.display(_dir)){
+          assertTrue(true);
+        }else{
+         assertTrue(false);
+        }
     }
 //
 //    /**
