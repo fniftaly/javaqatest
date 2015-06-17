@@ -75,7 +75,7 @@ public class CreateFileDir implements Create_dir_file {
     }
 
     @Override
-    public void display(String fileurl) {
+    public boolean display(String fileurl) {
         try {
             FileInputStream fis = new FileInputStream(fileurl + "/" + filename);
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -85,11 +85,9 @@ public class CreateFileDir implements Create_dir_file {
         } catch (IOException ioe) {
             System.err.println("An IOException was caught!");
             ioe.printStackTrace();
-            return;
         } catch (ClassNotFoundException c) {
             System.out.println("Class not found");
             c.printStackTrace();
-            return;
         }
         Iterator<User> iterator = userlist.iterator();
         while (iterator.hasNext()) {
@@ -97,6 +95,8 @@ public class CreateFileDir implements Create_dir_file {
             System.out.println("ID: " + userobj.getUserid() + " FirstName: " + userobj.getFirstname()
                     + " LastName: " + userobj.getLastname()+ " Title: " + userobj.getTitle());
         }
+        if(userlist.size() != 0){ return true;}
+        else{return false;}
     }
 
     @Override

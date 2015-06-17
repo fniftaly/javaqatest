@@ -20,7 +20,7 @@ public interface Create_dir_file {
     
     public void addtofile(ArrayList<User> user, String fileurl);
     
-    public void display(String fileurl);
+    public boolean display(String fileurl);
     
     public void copyfile(String sourceurl, String desturl);
     
